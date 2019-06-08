@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.rogrand</groupId>
+        <artifactId>rogrand-parent</artifactId>
+        <version>2.0.4</version>
+    </parent>
+
+    <groupId>com.roy.gdy</groupId>
+    <artifactId>disconf-demo</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>disconf-demo-core</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <skipTest>true</skipTest>
+        <version-maven-jar-plugin>2.4</version-maven-jar-plugin>
+        <version-maven-assembly-plugin>2.4</version-maven-assembly-plugin>
+        <version.rogrand-security>2.0.7</version.rogrand-security>
+        <!-- LogStash -->
+        <ops.logstash.version>1.1</ops.logstash.version>
+        <!-- Spring版本由3.1.3.RELEASE升级到4.3.10.RELEASE -->
+        <version-spring>4.3.10.RELEASE</version-spring>
+        <!-- Dubbo版本由2.4.5升级到2.5.7-->
+        <version-dubbo>2.5.7</version-dubbo>
+        <!-- Apache Commons -->
+        <commons.langs.version>3.4</commons.langs.version>
+        <commons.io.version>1.3.2</commons.io.version>
+        <!-- fastjson -->
+        <fastjson.version>1.2.8</fastjson.version>
+        <!-- guava -->
+        <guava.version>15.0</guava.version>
+        <!-- Cache -->
+        <memcached.version>2.0.0</memcached.version>
+        <aspectj.version>1.8.0</aspectj.version>
+        <cglib.version>2.1_3</cglib.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <skipTest>true</skipTest>
+
+        <version.rogrand-security>2.0.7</version.rogrand-security>
+        <!-- LogStash -->
+        <ops.logstash.version>1.1</ops.logstash.version>
+        <!-- Spring版本由3.1.3.RELEASE升级到4.3.10.RELEASE -->
+        <version-spring>4.3.10.RELEASE</version-spring>
+        <!-- Dubbo版本由2.4.5升级到2.5.7-->
+        <version-dubbo>2.5.7</version-dubbo>
+        <version-netty4>4.0.28.Final</version-netty4>
+        <!-- Apache Commons -->
+        <commons.langs.version>3.4</commons.langs.version>
+        <commons.io.version>1.3.2</commons.io.version>
+        <!-- fastjson -->
+        <fastjson.version>1.2.8</fastjson.version>
+        <!-- guava -->
+        <guava.version>15.0</guava.version>
+        <!-- Cache -->
+        <memcached.version>2.0.0</memcached.version>
+        <aspectj.version>1.8.0</aspectj.version>
+        <cglib.version>2.1_3</cglib.version>
+
+        <version-maven-source-plugin>2.2.1</version-maven-source-plugin>
+        <version-maven-javadoc-plugin>2.9</version-maven-javadoc-plugin>
+        <version-maven-jar-plugin>2.4</version-maven-jar-plugin>
+        <version-maven-compiler-plugin>3.1</version-maven-compiler-plugin>
+        <version-maven-surefire-plugin>2.14.1</version-maven-surefire-plugin>
+        <version-maven-release-plugin>2.4.1</version-maven-release-plugin>
+        <version-maven-assembly-plugin>2.4</version-maven-assembly-plugin>
+
+        <!-- 第三方库版本号 -->
+        <version-dubbo>2.4.5</version-dubbo>
+        <version-zookeeper>3.4.5</version-zookeeper> <!-- current version 3.4.3 -->
+        <version-zkclient>0.1</version-zkclient>
+        <version-netty>3.2.7.Final</version-netty>
+        <!-- spring framework -->
+        <version-spring>3.1.3.RELEASE</version-spring>
+        <version-mybatis>3.2.2</version-mybatis>
+        <!-- mybatis spring integration -->
+        <version-mybatis-spring>1.2.0</version-mybatis-spring>
+        <!-- mysql java connector -->
+        <version-mysql-connector>5.1.24</version-mysql-connector>
+        <!-- tomcat jdbc connection pool -->
+        <version-tomcat-jdbc>7.0.39</version-tomcat-jdbc>
+        <version-log4j>1.2.17</version-log4j>
+        <version-slf4j>1.7.2</version-slf4j>
+        <version-gson>2.2.2</version-gson>
+        <version-antlr>3.4</version-antlr>
+        <!-- must be compatible with antlr and antlr-runtime -->
+        <version-stringtemplate>3.2.1</version-stringtemplate>
+        <version-quartz-scheduler>2.1.6</version-quartz-scheduler>
+        <version-commons-io>2.4</version-commons-io>
+        <version-javassist>3.16.1-GA</version-javassist>
+        <version-cglib>2.2.2</version-cglib>
+        <version-velocity>1.7</version-velocity>
+    </properties>
+
+    <profiles>
+        <!--<profile>
+            <id>dev_wh</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <pom.redis.url>192.168.19.124:6374,192.168.19.124:6375,192.168.19.124:6376,192.168.19.126:6377,192.168.19.126:6378,192.168.19.126:6379</pom.redis.url>
+                <pom.jdbc.datasource>com.alibaba.druid.pool.DruidDataSource</pom.jdbc.datasource>
+                <pom.jdbc.cbs.read.url>jdbc:mysql://192.168.19.14:3306/rg_cbs?characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull</pom.jdbc.cbs.read.url>
+                <pom.jdbc.cbs.read.username>mph_wh_test</pom.jdbc.cbs.read.username>
+                <pom.jdbc.cbs.read.password>mph_wh_test123!@#$</pom.jdbc.cbs.read.password>
+            </properties>
+        </profile>-->
+    </profiles>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons.langs.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.io.version}</version>
+            </dependency>
+
+            <!-- fastjson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <!-- netty4 -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${version-netty4}</version>
+            </dependency>
+
+            <!-- cglib -->
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib-nodep</artifactId>
+                <version>${cglib.version}</version>
+            </dependency>
+            <!-- aspectj -->
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjrt</artifactId>
+                <version>${aspectj.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectj.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <scm>
+        <connection>scm:git:https://git.rograndec.com/mph/mph-promotion-service-group.git</connection>
+        <developerConnection>scm:git:https://git.rograndec.com/mph/mph-promotion-service-group.git</developerConnection>
+        <url>https://git.rograndec.com/mph/mph-promotion-service-group.git</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <tagBase>https://git.rograndec.com/mph/mph-promotion-service-group/tags</tagBase>
+                    <branchBase>https://git.rograndec.com/mph/mph-promotion-service-group/branches</branchBase>
+                    <tagNameFormat>@{version}</tagNameFormat>
+                    <username>${scm.username}</username>
+                    <password>${scm.password}</password>
+                    <preparationGoals>clean</preparationGoals>
+                    <checkModificationExcludeList>.classpath,.project,.settings,.DS_Store,target</checkModificationExcludeList>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <name>Internal Release Repository</name>
+            <url>http://mvn.rograndec.net/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>Internal Snapshot Repository</name>
+            <url>http://mvn.rograndec.net/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>
